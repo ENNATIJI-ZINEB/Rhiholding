@@ -1,10 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: Promise<{ slug: string }> | { slug: string } }
-) {
+export async function GET(request: NextRequest) {
   try {
     // Check if Supabase is configured
     if (!process.env.SUPABASE_SERVICE_ROLE_KEY || !process.env.NEXT_PUBLIC_SUPABASE_URL) {
@@ -14,14 +11,21 @@ export async function GET(
       );
     }
 
-    // Handle both Promise and direct params (Next.js 15 compatibility)
-    const resolvedParams = params instanceof Promise ? await params : params;
+    const slug = request.nextUrl.searchParams.get('slug');
+
+    if (!slug) {
+      return NextResponse.json(
+        { error: 'Missing slug parameter. Use /api/blog/by-slug?slug=example' },
+        { status: 400 }
+      );
+    }
+
     const supabase = createServerClient();
 
     const { data, error } = await supabase
       .from('blog_posts')
       .select('*')
-      .eq('slug', resolvedParams.slug)
+      .eq('slug', slug)
       .eq('published', true)
       .single();
 
