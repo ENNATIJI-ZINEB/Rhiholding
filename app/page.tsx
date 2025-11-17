@@ -121,23 +121,23 @@ export default function HomePage() {
     {
       quote:
         "RHI Holding Privé transformed our brand strategy and digital presence. Their expertise in multi-brand management is unmatched.",
-      author: "Sarah Johnson",
-      role: "CEO",
-      company: "Tech Innovations Inc.",
+      author: "O.S",
+      role: "Founder",
+      company: "Archikmor",
     },
     {
       quote:
         "Working with RHI has been a game-changer. Their research-driven approach helped us achieve 300% growth in just one year.",
-      author: "Michael Chen",
-      role: "Founder",
-      company: "Growth Ventures",
+      author: "C.U",
+      role: "Manager",
+      company: "Jettel/SupsisAI",
     },
     {
       quote:
         "The team's resilience and clarity in communication made our partnership seamless. Highly recommend their services.",
-      author: "Emma Williams",
-      role: "CMO",
-      company: "Digital Solutions Group",
+      author: "N.A",
+      role: "CEO",
+      company: "Mnnina",
     },
   ];
 
