@@ -130,7 +130,7 @@ export default function HomePage() {
         "Working with RHI has been a game-changer. Their research-driven approach helped us achieve 300% growth in just one year.",
       author: "C.U",
       role: "Manager",
-      company: "Jettel/SupsisAI",
+      company: "Viadesign",
     },
     {
       quote:
