@@ -82,35 +82,24 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
+              {/* Google Map */}
               <div className="bg-white rounded-xl shadow-md p-8">
                 <h3 className="text-xl font-heading font-bold text-primary mb-4">
                   Our Location
                 </h3>
-                <div className="aspect-video bg-background-light rounded-lg flex items-center justify-center">
-                  <div className="text-center text-gray-500">
-                    <svg
-                      className="w-16 h-16 mx-auto mb-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                    <p className="text-sm">Map</p>
-                    <p className="text-xs mt-1">Technopark Casablanca</p>
-                  </div>
+                <div className="aspect-video rounded-lg overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps?q=Technopark+Casablanca,+Casablanca,+Morocco&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-full"
+                    title="RHI Holding Privé Location - Technopark Casablanca"
+                    aria-label="Google Maps showing Technopark Casablanca location"
+                  />
                 </div>
               </div>
             </div>
