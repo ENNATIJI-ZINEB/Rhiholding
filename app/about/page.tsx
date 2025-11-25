@@ -122,7 +122,7 @@ export default function AboutPage() {
                 <p className="text-gray-700 mb-4 italic text-lg">
                   "Building RHI Holding Privé has been a journey of
                   understanding what businesses truly need in today's complex
-                  marketplace. We don't just consult—we partner, we build, and
+                  marketplace. We don't just consult, we partner, we build, and
                   we grow together. Our commitment to resilience, clarity, and
                   excellence drives everything we do."
                 </p>
