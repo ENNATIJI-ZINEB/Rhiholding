@@ -105,10 +105,14 @@ export default function AboutPage() {
           <div className="bg-white rounded-xl shadow-md p-8 md:p-12">
             <div className="flex flex-col md:flex-row gap-8 items-start">
               <div className="flex-shrink-0">
-                <div className="w-32 h-32 bg-primary rounded-full flex items-center justify-center">
-                  <span className="text-white text-4xl font-heading font-bold">
-                    RHI
-                  </span>
+                <div className="w-32 h-32 rounded-full overflow-hidden relative">
+                  <Image
+                    src="/assets/founder.jpg"
+                    alt="El Mehdi Idrissi Guenouni, Founder of RHI Holding Privé"
+                    width={128}
+                    height={128}
+                    className="object-cover w-full h-full"
+                  />
                 </div>
               </div>
               <div className="flex-grow">
@@ -123,7 +127,7 @@ export default function AboutPage() {
                   excellence drives everything we do."
                 </p>
                 <p className="text-gray-600">
-                  — Founder, RHI Holding Privé
+                  — El Mehdi Idrissi Guenouni, Founder of RHI Holding Privé
                 </p>
               </div>
             </div>

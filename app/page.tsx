@@ -153,15 +153,6 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <ScrollAnimation>
               <div>
-                <div className="mb-6 animate-pulse">
-                  <Image
-                    src="/assets/logo2.png"
-                    alt="RHI Holding Privé Logo"
-                    width={500}
-                    height={500}
-                    className="object-contain"
-                  />
-                </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6">
                   Strategic growth, resilience & digital excellence.
                 </h1>
@@ -182,21 +173,16 @@ export default function HomePage() {
             </ScrollAnimation>
             <div className="hidden md:block">
               <ScrollAnimation delay={200}>
-                <div className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm hover:bg-white/15 transition-all duration-300">
-                  <div className="aspect-square bg-white/5 rounded-xl flex items-center justify-center">
-                    <svg
-                      className="w-64 h-64 text-white/20"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1}
-                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                      />
-                    </svg>
+                <div className="rounded-2xl p-8">
+                  <div className="aspect-square rounded-xl flex items-center justify-center p-6">
+                    <Image
+                      src="/assets/logo2.png"
+                      alt="RHI Holding Privé icon"
+                      width={1000}
+                      height={1000}
+                      className="object-contain drop-shadow-lg animate-pulse"
+                      priority
+                    />
                   </div>
                 </div>
               </ScrollAnimation>
