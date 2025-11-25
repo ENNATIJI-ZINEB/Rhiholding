@@ -225,7 +225,7 @@ export default function HomePage() {
           <ScrollAnimation>
             <SectionTitle>Core Service Pillars</SectionTitle>
           </ScrollAnimation>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
             {servicePillars.map((service, index) => (
               <ScrollAnimation key={index} delay={index * 100}>
                 <ServiceCard
