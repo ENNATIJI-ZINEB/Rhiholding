@@ -1,34 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { blogPosts } from "../page";
 
-async function getBlogPost(slug: string) {
-  try {
-    // Check if Supabase is configured
-    if (!process.env.SUPABASE_SERVICE_ROLE_KEY || !process.env.NEXT_PUBLIC_SUPABASE_URL) {
-      console.warn('Supabase not configured. Blog post not found.');
-      return null;
-    }
-
-    // Use direct Supabase call instead of API to avoid circular issues
-    const { createServerClient } = await import('@/lib/supabase');
-    const supabase = createServerClient();
-    
-    const { data, error } = await supabase
-      .from('blog_posts')
-      .select('*')
-      .eq('slug', slug)
-      .eq('published', true)
-      .single();
-
-    if (error || !data) {
-      return null;
-    }
-
-    return data;
-  } catch (error) {
-    console.error('Error fetching blog post:', error);
-    return null;
-  }
+function getBlogPost(slug: string) {
+  return blogPosts.find((post) => post.slug === slug) || null;
 }
 
 // Helper function to parse markdown-like content
@@ -71,7 +46,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }> | { slug: string };
 }): Promise<Metadata> {
   const resolvedParams = params instanceof Promise ? await params : params;
-  const post = await getBlogPost(resolvedParams.slug);
+  const post = getBlogPost(resolvedParams.slug);
   if (!post) {
     return {
       title: "Post Not Found",
@@ -89,23 +64,11 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }> | { slug: string };
 }) {
   const resolvedParams = params instanceof Promise ? await params : params;
-  const post = await getBlogPost(resolvedParams.slug);
+  const post = getBlogPost(resolvedParams.slug);
 
   if (!post) {
     notFound();
   }
-
-  const formattedDate = post.published_at
-    ? new Date(post.published_at).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      })
-    : new Date(post.created_at).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      });
 
   return (
     <div>
@@ -118,7 +81,7 @@ export default async function BlogPostPage({
                 {post.category}
               </span>
               <span className="mx-2 text-gray-400">•</span>
-              <span className="text-sm text-gray-600">{formattedDate}</span>
+              <span className="text-sm text-gray-600">{post.date}</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6">
               {post.title}
