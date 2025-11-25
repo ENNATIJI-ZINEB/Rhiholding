@@ -20,6 +20,7 @@ const subBrands = [
     category: "Debate & Empowerment",
     description:
       "Rhitoric focuses on fostering meaningful dialogue, debate, and empowerment through communication platforms and educational initiatives. We believe in the power of discourse to drive positive change.",
+    url: "https://www.rhitoric.com",
   },
   {
     name: "Rhi Studio",
@@ -77,7 +78,18 @@ export default function SubBrandsPage() {
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-2xl font-heading font-bold text-primary mb-2">
-                      {brand.name}
+                      {brand.url ? (
+                        <a
+                          href={brand.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-accent transition-colors duration-200"
+                        >
+                          {brand.name}
+                        </a>
+                      ) : (
+                        brand.name
+                      )}
                     </h3>
                     <span className="inline-block px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">
                       {brand.category}
@@ -125,7 +137,14 @@ export default function SubBrandsPage() {
               <div className="text-center">
                 <div className="bg-accent/10 rounded-xl p-6 mb-4">
                   <h4 className="font-heading font-bold text-primary text-lg mb-2">
-                    Rhitoric
+                    <a
+                      href="https://www.rhitoric.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-accent transition-colors duration-200"
+                    >
+                      Rhitoric
+                    </a>
                   </h4>
                   <p className="text-sm text-gray-600">Debate & Empowerment</p>
                 </div>
