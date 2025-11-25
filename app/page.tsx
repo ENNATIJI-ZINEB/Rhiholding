@@ -152,7 +152,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <ScrollAnimation>
-              <div>
+              <div className="order-2 md:order-1">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6">
                   Strategic growth, resilience & digital excellence.
                 </h1>
@@ -171,16 +171,16 @@ export default function HomePage() {
                 </div>
               </div>
             </ScrollAnimation>
-            <div className="hidden md:block">
+            <div className="order-1 md:order-2">
               <ScrollAnimation delay={200}>
-                <div className="rounded-2xl p-8">
-                  <div className="aspect-square rounded-xl flex items-center justify-center p-6">
+                <div className="rounded-2xl p-4 md:p-8">
+                  <div className="aspect-square rounded-xl flex items-center justify-center p-4 md:p-6">
                     <Image
                       src="/assets/logo2.png"
                       alt="RHI Holding Privé icon"
                       width={1000}
                       height={1000}
-                      className="object-contain drop-shadow-lg animate-pulse"
+                      className="object-contain drop-shadow-lg animate-pulse w-full max-w-xs md:max-w-none"
                       priority
                     />
                   </div>
