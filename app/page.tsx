@@ -151,8 +151,8 @@ export default function HomePage() {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <ScrollAnimation>
-              <div className="order-2 md:order-1">
+            <ScrollAnimation className="order-2 md:order-1">
+              <div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6">
                   Strategic growth, resilience & digital excellence.
                 </h1>
@@ -171,8 +171,7 @@ export default function HomePage() {
                 </div>
               </div>
             </ScrollAnimation>
-            <div className="order-1 md:order-2">
-              <ScrollAnimation delay={200}>
+            <ScrollAnimation delay={200} className="order-1 md:order-2">
                 <div className="rounded-2xl p-4 md:p-8">
                   <div className="aspect-square rounded-xl flex items-center justify-center p-4 md:p-6">
                     <Image
@@ -186,7 +185,6 @@ export default function HomePage() {
                   </div>
                 </div>
               </ScrollAnimation>
-            </div>
           </div>
         </div>
       </section>
