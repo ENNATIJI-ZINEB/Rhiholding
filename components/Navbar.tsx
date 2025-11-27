@@ -23,6 +23,7 @@ export default function Navbar() {
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
     { href: "/portfolio", label: "Portfolio" },
+    { href: "/case-studies", label: "Case Studies" },
     { href: "/sub-brands", label: "Sub-brands" },
     { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
@@ -47,23 +48,23 @@ export default function Navbar() {
               height={100}
               className="object-contain"
             />
-            <span className="text-xl font-heading font-bold text-primary hidden sm:block">
+            <span className="text-xl font-heading font-bold text-primary hidden sm:block whitespace-nowrap">
               RHI Holding Privé
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-primary hover:text-accent transition-colors duration-200 font-medium"
+                className="text-primary hover:text-accent transition-colors duration-200 font-medium whitespace-nowrap"
               >
                 {link.label}
               </Link>
             ))}
-            <Button href="/contact" variant="primary">
+            <Button href="/contact" variant="primary" className="whitespace-nowrap">
               Book a consultation
             </Button>
           </div>
